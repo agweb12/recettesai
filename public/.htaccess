@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|otf|ttf|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "http://recettesai.cours"
+    </FilesMatch>
+</IfModule>

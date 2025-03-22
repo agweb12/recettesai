@@ -1,0 +1,109 @@
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3rem 1rem;
+    background: var(--background-secondary);
+
+    .menu {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        a.imgMenu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            transition: none;
+            padding: 0;
+            border: none;
+            border-radius: 5px;
+            background: transparent;
+            color: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background: none;
+                transform: scale(1.05);
+            }
+
+            &:visited {
+                color: none;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            &:focus {
+                outline: 0px solid transparent;
+                outline-offset: none;
+            }
+
+            img {
+                width: 5rem;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            .form-input {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: .3rem;
+                border: .03rem solid var(--primary-color);
+                border-radius: 2rem;
+                padding: .1rem 1rem;
+                transition: all 0.5s ease-in-out;
+                background: var(--background-secondary);
+
+                #searchIngredient {
+                    color: #FFB74D;
+                    font-size: 1.3rem;
+                }
+
+                &:focus-within {
+                    border: .01rem solid var(--primary-color);
+                    box-shadow: 0 0 12px var(--primary-color);
+                }
+
+                input {
+                    font-size: .9rem;
+                }
+            }
+        }
+
+        .linkNav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+        }
+
+        .ctaButtons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+        }
+    }
+}
