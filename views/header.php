@@ -64,11 +64,29 @@
     <meta name="theme-color" content="#ffffff">
 <!-- <script src="https://kit.fontawesome.com/d35f779ce5.js" crossorigin="anonymous"></script> -->
 <link href="<?= RACINE_SITE ?>public/assets/icons/webfonts/uicons-solid-rounded.css" rel="stylesheet">
-
-    
-
 </head>
-<header>
-    
-</header>
 <body>
+<header>
+    <!-- Menu Application Recettes AI -->
+    <nav class="menu">
+        <a href="<?= RACINE_SITE ?>index.php" class="imgMenu"><img src="<?= RACINE_SITE ?>/public/assets/img/logo-white.webp" alt=""></a>
+        <form action="recettes.php" method="POST">
+            <div class="form-input">
+                <i class="fi fi-sr-search-heart" id="searchIngredient"></i>
+                <input type="text" name="ingredients" placeholder="Entrez vos ingrédients" required>
+            </div>
+            <button type="submit">Trouver une recette</button>
+        </form>
+        <div class="linkNav">
+            <a href="<?= RACINE_SITE ?>recettes.php"><i class="fi fi-sr-utensils"></i> Recettes</a>
+            <a href="<?= RACINE_SITE ?>contact.php"><i class="fi fi-sr-headset"></i> Contact</a>
+        </div>
+        <div class="ctaButtons">
+            <a href="<?= RACINE_SITE ?>inscription.php" class="cta"><i class="fi fi-sr-sign-up"></i> S'inscrire</a>
+            <a href="<?= RACINE_SITE ?>connexion.php" class="cta"><i class="fi fi-sr-enter"></i> Se Connecter</a>
+            <a href="<?= RACINE_SITE ?>deconnexion.php" class="cta"><i class="fi fi-sr-sign-out-alt"></i> Déconnexion</a>
+            <a href="<?= RACINE_SITE ?>profil/monCompte.php" class="cta"><i class="fi fi-sr-user-trust"></i> Mon Compte</a>
+        </div>
+    </nav>
+</header>
+<main>

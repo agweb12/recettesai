@@ -12,36 +12,29 @@ $descriptionPage = "Recettes AI est un site qui vous permet de trouver des recet
 $indexPage = "index";
 $followPage = "follow";
 $keywordsPage = "Recettes AI, recette, ai, intelligence artificielle, cuisine, ingrédients, recettes, trouver une recette";
-require_once('config/config.php');
+require_once('inc/functions.php');
 require_once('views/header.php');
 ?>
-<header>
-    <!-- Menu Application Recettes AI -->
-    <nav class="menu">
-        <a href="<?= RACINE_SITE ?>index.php" class="imgMenu"><img src="<?= RACINE_SITE ?>/public/assets/img/logo-white.webp" alt=""></a>
-        <form action="recettes.php" method="POST">
-            <div class="form-input">
-                <i class="fi fi-sr-search-heart" id="searchIngredient"></i>
-                <input type="text" name="ingredients" placeholder="Entrez vos ingrédients" required>
-            </div>
-            <button type="submit">Trouver une recette</button>
-        </form>
-        <div class="linkNav">
-            <a href="<?= RACINE_SITE ?>recettes.php"><i class="fi fi-sr-utensils"></i> Recettes</a>
-            <a href="<?= RACINE_SITE ?>contact.php"><i class="fi fi-sr-headset"></i> Contact</a>
+
+    <section class="hero">
+        <div class="boxHero">
+            <h1>Bienvenue sur Recettes AI</h1>
+            <p>Recettes AI est un site qui vous permet de trouver des recettes de cuisine en fonction des ingrédients que vous avez chez vous. Il vous suffit de saisir les ingrédients que vous avez et nous vous proposerons des recettes adaptées.</p>
+            <?php if(isLoggedIn()): ?>
+            <form action="" method="post" id="formIngredients">
+                <label for="ingredients">Quels ingrédients avez-vous ?</label>
+                <div class="inputBox">
+                    <i class="fi fi-sr-search-heart" id="searchIngredient"></i>
+                    <input type="text" name="ingredients[]" class="inputIngredient" placeholder="Ex: Tomate" autocomplete="off" required>
+                </div>
+                <button type="button" id="addIngredient"><i class="fi fi-sr-add"></i> Ajouter un ingrédient</button>
+                <button type="submit">Trouver une recette</button>
+            </form>
+            <?php else: ?>
+                <button type="button" id="btnModal">Commencer à trouver ta recette du jour</button>
+                <?php include ('inc/modalConnexion.php'); ?>
+            <?php endif; ?>
         </div>
-        <div class="ctaButtons">
-            <a href="<?= RACINE_SITE ?>inscription.php" class="cta"><i class="fi fi-sr-sign-up"></i> S'inscrire</a>
-            <a href="<?= RACINE_SITE ?>connexion.php" class="cta"><i class="fi fi-sr-enter"></i> Se Connecter</a>
-            <a href="<?= RACINE_SITE ?>deconnexion.php" class="cta"><i class="fi fi-sr-sign-out-alt"></i> Déconnexion</a>
-            <a href="<?= RACINE_SITE ?>profil/monCompte.php" class="cta"><i class="fi fi-sr-user-trust"></i> Mon Compte</a>
-        </div>
-    </nav>
-</header>
-<main>
-    <section >
-        <h1>Bienvenue sur Recettes AI</h1>
-        <p>Recettes AI est un site qui vous permet de trouver des recettes de cuisine en fonction des ingrédients que vous avez chez vous. Il vous suffit de saisir les ingrédients que vous avez et nous vous proposerons des recettes adaptées.</p>
         
     </section>
     <section>
