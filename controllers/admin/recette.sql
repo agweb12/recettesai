@@ -30,6 +30,8 @@ CREATE TABLE IF NOT EXISTS categorie (
     nom VARCHAR(50) NOT NULL UNIQUE,
     descriptif TEXT,
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    couleur VARCHAR(7) NOT NULL, -- Couleur en hexadécimal (ex: #FF5733)
+    image_url VARCHAR(255),
     FOREIGN KEY (id_admin) REFERENCES administrateur(id) ON DELETE CASCADE
 );
 
@@ -39,7 +41,7 @@ CREATE TABLE IF NOT EXISTS etiquette (
     id_admin INT NOT NULL,
     nom VARCHAR(100) NOT NULL UNIQUE,
     descriptif TEXT,
-    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
     FOREIGN KEY (id_admin) REFERENCES administrateur(id) ON DELETE CASCADE
 );
 
@@ -58,6 +60,8 @@ CREATE TABLE IF NOT EXISTS recette (
     id_admin INT NOT NULL,
     nom VARCHAR(100) NOT NULL,
     descriptif TEXT,
+    instructions TEXT,
+    image_url VARCHAR(255),
     temps_preparation INT NOT NULL CHECK (temps_preparation >= 0),
     temps_cuisson INT NOT NULL CHECK (temps_cuisson >= 0),
     difficulte ENUM('facile', 'moyenne', 'difficile') NOT NULL,

@@ -1,5 +1,12 @@
 <?php
 // require_once('../inc/functions.php');
+/*
+ * Ce fichier est le point d'entrée de l'application Recettes AI.
+ * Il inclut les fichiers de configuration et d'en-tête,
+ * Recoit toutes les requêtes
+ * initialise le routeur
+ *  et dispatche la requête vers les bons contrôleurs. 
+ */
 $titlePage = "Recettes AI";
 $descriptionPage = "Recettes AI est un site qui vous permet de trouver des recettes de cuisine en fonction des ingrédients que vous avez chez vous.";
 $indexPage = "index";
